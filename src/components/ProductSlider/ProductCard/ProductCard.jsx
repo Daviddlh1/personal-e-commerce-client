@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }) {

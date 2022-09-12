@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard/ProductCard";
 import styles from "./ProductSlider.module.css";
-import { useSelector } from "react-redux";
 
 function ProductSlider({ products }) {
   const [currentPage, setCurrentPage] = useState(0);
