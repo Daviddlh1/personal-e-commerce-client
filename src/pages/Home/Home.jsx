@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getProducts} from "../../services/products.services"
-import { setProducts } from "../../redux/states/products";
-import ProductSlider from "../../components/ProductSlider/ProductsSlider"
+import { getProducts } from "../../services/products.services";
+import { setProductsStore } from "../../redux/states/products";
+import ProductSlider from "../../components/ProductSlider/ProductsSlider";
 
 function Home() {
-  let products = useSelector((store) => store.displayableProducts);;
-  const [isLoading, setIsLoading] = useState(true)
-  
   const dispatch = useDispatch();
+  const [storeLoaded, setStoreLoaded] = useState(false);
+  const products = useSelector((store) => store.products.displayableProducts);
   useEffect(() => {
-    getProducts().then((res) => {
-      dispatch(setProducts(res))
-    })
-  },[products]);
-
-  function pageContentDidLoad(didLoad) {
-    setIsLoading(didLoad)
-  }
-
-  if(products) return <><h1>Loading</h1></>
-  else return (
+    getProducts()
+      .then((res) => dispatch(setProductsStore(res)))
+      .then(() => {
+        setStoreLoaded(true);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  return storeLoaded ? (
     <>
       <h1>Hello from Home</h1>
-      <ProductSlider />
+      <ProductSlider products={products} />
+    </>
+  ) : (
+    <>
+      <h1>Loading</h1>
     </>
   );
 }

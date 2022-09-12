@@ -1,0 +1,10 @@
+.productCard__container {
+    border: 1px solid black;
+    min-width: 16rem;
+    min-height: 25rem;
+}
+
+.productCard__container__image {
+    max-width: 100%;
+    object-fit: contain;
+}
