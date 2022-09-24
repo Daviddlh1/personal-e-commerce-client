@@ -1,4 +1,4 @@
-.productSlider__CarrouselContainer {
+.container {
     display: flex;
     gap: 1rem;
     overflow-x: hidden;

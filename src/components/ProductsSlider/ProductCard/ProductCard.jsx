@@ -1,9 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }) {
+  
   return (
     <>
+    
       <div className={styles.productCard__container}>
         <img
           className={styles.productCard__container__image}
