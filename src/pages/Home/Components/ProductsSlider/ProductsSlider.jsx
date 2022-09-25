@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ProductCard from "./ProductCard/ProductCard"
+import React from "react";
+import ProductCard from "../ProductCard/ProductCard"
 import styles from "./ProductsSlider.module.css"
 
 function ProductsSlider({ currentProducts }) {
