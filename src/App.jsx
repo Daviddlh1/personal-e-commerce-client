@@ -1,14 +1,16 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import MainLayout from "./Layouts/MainLayout";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="*" />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

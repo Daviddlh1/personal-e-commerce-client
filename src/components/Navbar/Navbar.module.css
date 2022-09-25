@@ -1,0 +1,39 @@
+.container_smallScreens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.container_bigScreens {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  padding: 0 1rem;
+}
+
+.leftSide {
+    color: var(--primary);
+}
+
+.rightSide {
+  display: flex;
+  gap: 1rem;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+  }
+
+  .rightSide {
+    display: flex;
+    gap: 1rem;
+    color: var(--primary);
+  }
+}

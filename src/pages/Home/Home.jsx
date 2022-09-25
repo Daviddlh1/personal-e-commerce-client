@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../services/products.services";
 import { setProductsStore } from "../../redux/states/products";
+import Banner from "../../components/Banner/Banner";
+import Navbar from "../../components/Navbar/Navbar";
 import ProductsSlider from "./Components/ProductsSlider/ProductsSlider";
 import Pagination from "./Components/Pagination/Pagination";
+import Footer from "../../components/Footer/Footer"
 
 function Home() {
   const { displayableProducts } = useSelector((store) => store.products);
@@ -46,7 +49,8 @@ function Home() {
 
   return storeLoaded ? (
     <>
-      <h1>Hello from Home</h1>
+      <Banner/>
+      <Navbar/>
       <ProductsSlider currentProducts={currentProducts} />
       <Pagination
         productsPerPage={productsPerPage}
@@ -55,6 +59,7 @@ function Home() {
         previousPage={previousPage}
         nextPage={nextPage}
       />
+      <Footer />
     </>
   ) : (
     <>

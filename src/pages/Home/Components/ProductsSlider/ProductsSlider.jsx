@@ -9,9 +9,10 @@ function ProductsSlider({ currentProducts }) {
       <div className={styles.container}>
         {currentProducts.map(
           (product) => (
-            <>
-            <ProductCard product={product} key={product.id}/>
-            </>
+            <ProductCard 
+            key={product.id}
+            product={product}
+            />
           )
         )}
       </div>

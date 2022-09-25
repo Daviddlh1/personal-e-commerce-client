@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Pagination.module.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons"
 
 function Pagination({
   productsPerPage,
@@ -18,7 +20,7 @@ function Pagination({
     <>
       <div className={styles.container}>
         <a className={styles.pageNumber} onClick={previousPage}>
-          Prev
+          <FontAwesomeIcon icon={faAngleLeft}/>
         </a>
         {pageNumber.map((number, i) => (
           <a
@@ -30,7 +32,7 @@ function Pagination({
           </a>
         ))}
         <a className={styles.pageNumber} onClick={nextPage}>
-          Next
+        <FontAwesomeIcon icon={faAngleRight}/>
         </a>
       </div>
     </>
