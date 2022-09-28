@@ -1,3 +1,7 @@
+.mainContainer {
+    background-color: var(--primary);
+}
+
 .optionsContainer {
     display: flex;
     justify-content: space-around;

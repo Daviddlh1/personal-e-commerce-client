@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }) {

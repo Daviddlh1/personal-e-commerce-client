@@ -1,0 +1,21 @@
+.maincontainer {
+  min-height: 18rem;
+  max-width: 20rem;
+  min-width: 100%;
+}
+
+.articleImage {
+  height: 100%;
+  width: 20rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+.categoryName {
+    font-size: 80px;
+    color: white;
+    text-align: center;
+}

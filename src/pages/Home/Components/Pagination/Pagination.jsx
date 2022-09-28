@@ -19,21 +19,21 @@ function Pagination({
   return (
     <>
       <div className={styles.container}>
-        <a className={styles.pageNumber} onClick={previousPage}>
+        <span className={styles.pageNumber} onClick={previousPage}>
           <FontAwesomeIcon icon={faAngleLeft}/>
-        </a>
+        </span>
         {pageNumber.map((number, i) => (
-          <a
+          <span
             className={styles.pageNumber}
             key={i}
             onClick={() => changePage(number)}
           >
             {number}
-          </a>
+          </span>
         ))}
-        <a className={styles.pageNumber} onClick={nextPage}>
+        <span className={styles.pageNumber} onClick={nextPage}>
         <FontAwesomeIcon icon={faAngleRight}/>
-        </a>
+        </span>
       </div>
     </>
   );

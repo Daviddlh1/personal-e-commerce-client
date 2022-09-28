@@ -4,7 +4,7 @@ import styles from "./Footer.module.css"
 function Footer() {
   return (
     <>
-      <div>
+      <div className={styles.mainContainer}>
         <h2>E-commerce-title</h2>
         <div className={styles.optionsContainer}>
           <div>

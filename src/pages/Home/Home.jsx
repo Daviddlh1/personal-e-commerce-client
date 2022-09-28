@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../services/products.services";
+import { getProducts } from "../../logic/api";
 import { setProductsStore } from "../../redux/states/products";
 import Banner from "../../components/Banner/Banner";
 import Navbar from "../../components/Navbar/Navbar";
+import Categories from "./Components/Categories/Categories";
 import ProductsSlider from "./Components/ProductsSlider/ProductsSlider";
 import Pagination from "./Components/Pagination/Pagination";
 import Footer from "../../components/Footer/Footer"
@@ -27,9 +28,8 @@ function Home() {
       .then(() => {
         setStoreLoaded(true);
       })
-      .then(() => console.log(displayableProducts.length))
       .catch((error) => console.error(error));
-  }, [dispatch]);
+  }, [displayableProducts.length, dispatch]);
 
   const changePage = (pageNum) => {
     setCurrentPage(pageNum);
@@ -51,6 +51,7 @@ function Home() {
     <>
       <Banner/>
       <Navbar/>
+      <Categories/>
       <ProductsSlider currentProducts={currentProducts} />
       <Pagination
         productsPerPage={productsPerPage}
