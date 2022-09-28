@@ -1,5 +1,6 @@
 .container_smallScreens {
     display: flex;
+    color: var(--accents);
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
@@ -7,20 +8,16 @@
 
 .container_bigScreens {
   display: none;
-  justify-content: space-between;
-  align-items: center;
-  height: 2rem;
-  padding: 0 1rem;
 }
 
 .leftSide {
-    color: var(--primary);
+  color: var(--accents);
 }
 
 .rightSide {
   display: flex;
   gap: 1rem;
-  color: var(--primary);
+  color: var(--accents);
 }
 
 @media (min-width: 768px) {
@@ -31,9 +28,22 @@
     height: 2rem;
   }
 
+  .container_smallScreens {
+    display: none;
+  }
+
+  .container_bigScreens {
+    color: var(--accents);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    padding: 2rem 3rem;
+  }
+
   .rightSide {
     display: flex;
     gap: 1rem;
-    color: var(--primary);
+    color: var(--accents);
   }
 }

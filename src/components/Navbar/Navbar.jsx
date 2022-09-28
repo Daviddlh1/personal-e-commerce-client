@@ -31,7 +31,7 @@ function Navbar() {
         {toggle && <Menu handleToggle={handleToggle} />}
       </nav>
       <nav className={styles.container_bigScreens}>
-        <div>
+        <div className={styles.leftSide}>
           <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
         </div>
         <div>

@@ -3,5 +3,6 @@
     max-height: auto;
     display: grid;
     place-content: center;
+    color: white;
     background-color: var(--accents);
 }
