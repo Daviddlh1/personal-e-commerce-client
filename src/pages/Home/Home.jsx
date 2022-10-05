@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../logic/api";
+import { getProducts, getProductsFromDatabase } from "../../logic/api";
 import { setProductsStore } from "../../redux/states/products";
 import Banner from "../../components/Banner/Banner";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,7 +8,7 @@ import PromotionsSection from "./Components/PromotionsSection/PromotionsSection"
 import Categories from "./Components/Categories/Categories";
 import ProductsSlider from "./Components/ProductsSlider/ProductsSlider";
 import Pagination from "./Components/Pagination/Pagination";
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   const { displayableProducts } = useSelector((store) => store.products);
@@ -24,12 +24,21 @@ function Home() {
   );
 
   useEffect(() => {
-    getProducts()
-      .then((res) => dispatch(setProductsStore(res)))
+    getProductsFromDatabase()
+      .then((res) => {
+        dispatch(setProductsStore(res.data))
+        console.log(res)
+      })
       .then(() => {
         setStoreLoaded(true);
       })
-      .catch((error) => console.error(error));
+      .catch((err) => console.log(err));
+    // getProducts()
+    //   .then((res) => dispatch(setProductsStore(res)))
+    //   .then(() => {
+    //     setStoreLoaded(true);
+    //   })
+    //   .catch((error) => console.error(error));
   }, [displayableProducts.length, dispatch]);
 
   const changePage = (pageNum) => {
@@ -50,10 +59,10 @@ function Home() {
 
   return storeLoaded ? (
     <>
-      <Banner/>
-      <Navbar/>
-      <PromotionsSection/>
-      <Categories/>
+      <Banner />
+      <Navbar />
+      <PromotionsSection />
+      <Categories />
       <ProductsSlider currentProducts={currentProducts} />
       <Pagination
         productsPerPage={productsPerPage}
