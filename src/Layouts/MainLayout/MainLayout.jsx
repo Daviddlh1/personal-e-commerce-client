@@ -10,7 +10,7 @@ function MainLayout({children}) {
   <main className={styles.mainContainer}>
     {children}
   </main>
-  {/* <AppFooter className={styles.footer}/> */}
+  <AppFooter className={styles.footer}/>
   </>
   );
 }

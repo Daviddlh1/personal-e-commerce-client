@@ -51,16 +51,16 @@ function Home() {
   return storeLoaded ? (
     <>
       <Banner />
-      {/* <PromotionsSection /> */}
-      {/* <Categories /> */}
+      <PromotionsSection />
+      <Categories />
       <ProductsSlider currentProducts={currentProducts} />
-      {/* <Pagination
+      <Pagination
         productsPerPage={productsPerPage}
         productsAmount={displayableProducts.length}
         changePage={changePage}
         previousPage={previousPage}
         nextPage={nextPage}
-      /> */}
+      />
     </>
   ) : (
     <>

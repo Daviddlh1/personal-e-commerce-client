@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      {/* <nav className={styles.container_smallScreens}>
+      <nav className={styles.container_smallScreens}>
         <div className={styles.leftSide} onClick={handleToggle}>
           <FontAwesomeIcon icon={faBars} size="xl" />
         </div>
@@ -40,7 +40,7 @@ function Navbar() {
           <FontAwesomeIcon icon={faUser} size="xl" />
           <FontAwesomeIcon icon={faBagShopping} size="xl" />
         </div>
-      </nav> */}
+      </nav>
     </>
   );
 }
