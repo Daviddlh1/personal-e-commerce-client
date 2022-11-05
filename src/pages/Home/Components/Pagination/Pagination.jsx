@@ -9,6 +9,7 @@ function Pagination({
   changePage,
   previousPage,
   nextPage,
+  currentPage
 }) {
   let pageNumber = [];
 
@@ -22,7 +23,7 @@ function Pagination({
         <span className={styles.pageNumber} onClick={previousPage}>
           <FontAwesomeIcon icon={faAngleLeft}/>
         </span>
-        {pageNumber.map((number, i) => (
+        {/* {pageNumber.map((number, i) => (
           <span
             className={styles.pageNumber}
             key={i}
@@ -30,7 +31,8 @@ function Pagination({
           >
             {number}
           </span>
-        ))}
+        ))} */}
+        <span className={styles.pageNumber}>{currentPage}</span>
         <span className={styles.pageNumber} onClick={nextPage}>
         <FontAwesomeIcon icon={faAngleRight}/>
         </span>

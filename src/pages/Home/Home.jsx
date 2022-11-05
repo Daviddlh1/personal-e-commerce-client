@@ -60,6 +60,7 @@ function Home() {
         changePage={changePage}
         previousPage={previousPage}
         nextPage={nextPage}
+        currentPage={currentPage}
       />
     </>
   ) : (
