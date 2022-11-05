@@ -10,7 +10,7 @@ function ProductCard({ product }) {
           src={product.images[0]}
           alt="mockedImage"
         />
-        <div>
+        <div className={styles.text} >
           <h3>{product.title}</h3>
           <p>
             <span>Precio: </span>

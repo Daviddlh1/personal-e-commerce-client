@@ -12,7 +12,7 @@ function ProductsSlider({ currentProducts }) {
       <div className={styles.container}>
         {currentProducts.map(
           (product) => (
-            <Link key={product.id} to={`product/${product.id}`}>
+            <Link className={styles.productContainer} key={product.id} to={`product/${product.id}`}>
               <ProductCard 
               product={product}
               />

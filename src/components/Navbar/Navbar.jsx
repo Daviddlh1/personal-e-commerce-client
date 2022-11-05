@@ -14,12 +14,11 @@ function Navbar() {
   const handleToggle = (e) => {
     e.preventDefault();
     setToggle(!toggle);
-    console.log(!toggle);
   };
 
   return (
     <>
-      <nav className={styles.container_smallScreens}>
+      {/* <nav className={styles.container_smallScreens}>
         <div className={styles.leftSide} onClick={handleToggle}>
           <FontAwesomeIcon icon={faBars} size="xl" />
         </div>
@@ -28,7 +27,7 @@ function Navbar() {
           <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
           <FontAwesomeIcon icon={faBagShopping} size="xl" />
         </div>
-        {toggle && <Menu handleToggle={handleToggle} />}
+        <Menu isActive={toggle} handleToggle={handleToggle} />
       </nav>
       <nav className={styles.container_bigScreens}>
         <div className={styles.leftSide}>
@@ -41,7 +40,7 @@ function Navbar() {
           <FontAwesomeIcon icon={faUser} size="xl" />
           <FontAwesomeIcon icon={faBagShopping} size="xl" />
         </div>
-      </nav>
+      </nav> */}
     </>
   );
 }

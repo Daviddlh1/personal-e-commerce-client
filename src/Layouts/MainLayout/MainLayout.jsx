@@ -1,15 +1,16 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+import AppFooter from "../../components/Footer/Footer";
+import  styles  from "./MainLayout.module.css";
 
 function MainLayout({children}) {
   return (
   <>
   <Navbar/>
-  <main>
+  <main className={styles.mainContainer}>
     {children}
   </main>
-  <Footer/>
+  {/* <AppFooter className={styles.footer}/> */}
   </>
   );
 }
