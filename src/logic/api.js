@@ -5,7 +5,16 @@ const databaseBaseUrl = "http://localhost:5001/api"
 
 // Products
 export const getProducts = async() => {
-    return (await axios.get(`${baseUrl}/products`)).data;
+    const products = (await axios.get(`${databaseBaseUrl}/products`)).data;
+    products.forEach((product) => {
+        product.images = JSON.parse(product.images)
+    })
+    return products
+}
+
+export const getProductById = async (productId) => {
+    const product = (await axios.get(`${databaseBaseUrl}/products/${productId}`)).data
+    return product
 }
 
 //Categories
@@ -13,10 +22,6 @@ export const getCategories = async() => {
     return(await axios.get(`${baseUrl}/categories`)).data
 }
 
-//Products from database
-export const getProductsFromDatabase = () => {
-    return (axios.get(`${databaseBaseUrl}/products/getProductsFromDatabase`))
-}
 
 //Categories from database
 export const getCategoriesFromDatabase = () => {
